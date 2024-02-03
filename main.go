@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"flag"
 	"fmt"
 	"log/slog"
 	"os"
@@ -16,10 +15,7 @@ import (
 )
 
 func main() {
-	cfgPath := flag.String("config", "config.yml", "path to config file")
-	flag.Parse()
-
-	cfg, err := core.LoadConfig(*cfgPath)
+	cfg, err := core.LoadConfig()
 	if err != nil {
 		slog.Error("failed to load config", slog.Any("error", err))
 		os.Exit(-1)

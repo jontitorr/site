@@ -21,7 +21,7 @@
 go.work
 
 # Config
-config.yml
+.env
 bin/
 node_modules/
 tmp/

@@ -2,7 +2,10 @@ module github.com/jontitorr/site
 
 go 1.20
 
-require github.com/labstack/echo/v4 v4.11.4
+require (
+	github.com/labstack/echo/v4 v4.11.4
+	github.com/peterbourgon/ff/v3 v3.4.0
+)
 
 require (
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
@@ -26,5 +29,4 @@ require (
 	golang.org/x/oauth2 v0.16.0
 	golang.org/x/sys v0.16.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
-	gopkg.in/yaml.v3 v3.0.1
 )
