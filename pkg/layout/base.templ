@@ -1,0 +1,39 @@
+package layout;
+
+import (
+	"github.com/jontitorr/site/pkg/core"
+	"github.com/jontitorr/site/pkg/components"
+)
+
+templ Base() {
+	<!DOCTYPE html>
+	<html
+		lang="en"
+		x-data="{ darkMode: localStorage.getItem('dark') === 'true' || (!('dark' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) } "
+		x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
+		x-bind:class="{ 'dark': darkMode }"
+	>
+		<head>
+			<link rel="icon shortcut" href="static/favicon.ico"/>
+			<link rel="stylesheet" href="https://iosevka-webfonts.github.io/iosevka/iosevka.css"/>
+			<link rel="stylesheet" href="static/css/styles.css"/>
+			<meta charset="utf-8"/>
+			<meta name="description" content="Hi I'm jon"/>
+			<meta name="keywords" content="jontitorr, dev, portfolio, jon"/>
+			<meta name="theme-color" content="#172554"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+			<script defer src="static/js/alpinejs.min.js"></script>
+			<script defer src="static/js/htmx.min.js"></script>
+			<title>{ core.Site().Name }</title>
+		</head>
+		<body x-cloak class="min-h-screen bg-background font-sans antialiased">
+			<div class="relative flex min-h-screen flex-col justify-center items-center">
+				@components.SiteHeader()
+				<div class="flex-1 max-w-screen-2xl">
+					{ children... }
+				</div>
+			</div>
+		</body>
+	</html>
+}

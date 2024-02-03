@@ -1,0 +1,15 @@
+package components
+
+templ ThemeToggle() {
+	<div class="flex items-center justify-center relative">
+		<button type="button" class="p-2.5" @click="darkMode = !darkMode">
+			<span class="dark:hidden">
+				@Icons().Sun()
+			</span>
+			<span class="hidden dark:block">
+				@Icons().Moon()
+			</span>
+			<span class="sr-only">Toggle theme</span>
+		</button>
+	</div>
+}

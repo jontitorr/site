@@ -1,0 +1,19 @@
+package components
+
+import "github.com/jontitorr/site/pkg/core"
+
+templ ProjectList() {
+	<ul
+		class="list-disc pl-8 text-left text-muted-foreground text-lg leading-7"
+	>
+		for _, project := range core.Site().Projects {
+			<li>
+				<a href={ templ.SafeURL(project.Url) } class="underline">
+					{ project.Name }
+				</a>
+				{ " - " }
+				@templ.Raw(project.Html)
+			</li>
+		}
+	</ul>
+}

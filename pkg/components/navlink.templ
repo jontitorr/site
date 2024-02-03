@@ -1,0 +1,7 @@
+package components
+
+import "github.com/jontitorr/site/pkg/core"
+
+templ NavLink(link core.NavLink) {
+	<a href={ templ.SafeURL(link.Url) } class="flex items-center text-sm md:text-base font-medium transition-colors hover:text-foreground/80 text-white">{ link.Name }</a>
+}

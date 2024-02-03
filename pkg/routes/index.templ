@@ -1,0 +1,86 @@
+package routes;
+
+import (
+	"github.com/jontitorr/site/pkg/layout"
+	"github.com/jontitorr/site/pkg/components"
+)
+
+templ Index() {
+	@layout.Base() {
+		<section class="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+			<div class="flex flex-col items-center gap-2">
+				<h1 class="text-3xl font-extrabold uppercase leading-tight tracking-tighter md:text-4xl">
+					Hi there
+				</h1>
+				<p class="max-w-[700px] text-lg text-muted-foreground text-center md:text-left">
+					I'm Jonathan, a programmer from Chicago who loves solving complex problems with "good enough" solutions. Check out some of my work <a href="/projects" class="underline">here</a>.
+				</p>
+			</div>
+			<div class="gap-8 p-4">
+				<h2 class="text-3xl md:text-2xl font-bold leading-tight text-center md:text-left mb-4">
+					Technologies I use
+				</h2>
+				<p class="max-w-[700px] text-muted-foreground text-lg leading-7 md:leading-normal text-center md:text-left">
+					From writing networking libraries for building primitive web applications to setting up real-time infrastructure, to building tools for automating repetitive tasks, I've been fortunate enough to work with many different technologies.
+				</p>
+				<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 justify-center items-center gap-4 mt-8">
+					<img alt="Linux" src="https://img.shields.io/badge/-Linux-informational?style=for-the-badge&logo=linux&logoColor=white&color=FCC624"/>
+					<img alt="Kubernetes" src="https://img.shields.io/badge/-Kubernetes-informational?style=for-the-badge&logo=kubernetes&logoColor=white&color=326CE5"/>
+					<img alt="Docker" src="https://img.shields.io/badge/-Docker-informational?style=for-the-badge&logo=docker&logoColor=white&color=2496ED"/>
+					<img alt="git" src="https://img.shields.io/badge/-Git-informational?style=for-the-badge&logo=git&logoColor=white&color=F05032"/>
+					<img alt="C++" src="https://img.shields.io/badge/-C++-informational?style=for-the-badge&logo=cplusplus&logoColor=white&color=00599C"/>
+					<img alt="VSCode" src="https://img.shields.io/badge/-vscode-informational?style=for-the-badge&logo=visualstudiocode&logoColor=white&color=007ACC"/>
+					<br/>
+					<img alt="Golang" src="https://img.shields.io/badge/-Golang-informational?style=for-the-badge&logo=go&logoColor=white&color=00ADD8"/>
+					<img alt="Rust" src="https://img.shields.io/badge/-rust-informational?style=for-the-badge&logo=rust&logoColor=white&color=f04b01"/>
+					<img alt="Dart" src="https://img.shields.io/badge/-dart-informational?style=for-the-badge&logo=dart&logoColor=white&color=0175C2"/>
+					<img alt="HTML" src="https://img.shields.io/badge/-HTML-informational?style=for-the-badge&logo=html5&logoColor=white&color=E34F26"/>
+					<img alt="CSS" src="https://img.shields.io/badge/-CSS-informational?style=for-the-badge&logo=css3&logoColor=white&color=1572B6"/>
+					<img alt="JavaScript" src="https://img.shields.io/badge/-JavaScript-informational?style=for-the-badge&logo=javascript&logoColor=white&color=F7DF1E"/>
+					<br/>
+					<img alt="PostgreSQL" src="https://img.shields.io/badge/-PostgreSQL-informational?style=for-the-badge&logo=postgresql&logoColor=white&color=4169E1"/>
+					<img alt="SQLite" src="https://img.shields.io/badge/-SQLite-informational?style=for-the-badge&logo=sqlite&logoColor=white&color=47A248"/>
+				</div>
+				<div class="flex justify-center">
+					<img class="w-32 h-32 sm:w-48 sm:h-48" src="https://raw.githubusercontent.com/topi314/topi314/senpai/.github/KittyBot.gif" alt="Blinking Cat"/>
+				</div>
+			</div>
+			<div
+				class="flex max-w-[500px] flex-col items-start justify-center gap-4 text-center md:text-left"
+			>
+				<h2 class="text-3xl md:text-2xl font-bold leading-tight text-center md:text-left">
+					Some of the stuff I've worked on
+				</h2>
+				@components.ProjectList()
+				<p class="text-muted-foreground">
+					See more projects <a href="/projects" class="underline">here</a>
+				</p>
+			</div>
+			<div class="flex flex-col items-center gap-8 md:flex-row md:justify-center">
+				<video
+					src="/static/images/cat.webm"
+					alt="hero"
+					width="250"
+					height="250"
+					class="max-h-[400px] rounded-2xl object-cover"
+					poster="https://raw.githubusercontent.com/topi314/topi314/senpai/.github/KittyBot.gif"
+					playsinline
+					autoplay
+					muted
+					loop
+					poster="https://raw.githubusercontent.com/topi314/topi314/senpai/.github/KittyBot.gif"
+				></video>
+				<div
+					class="flex max-w-[500px] flex-col items-center justify-center space-y-4 text-center md:items-end md:text-right"
+				>
+					<h2 class="text-lg md:text-xl font-bold leading-[1.1]">
+						Lovely to meet you
+					</h2>
+					<p class="text-muted-foreground text-lg leading-7 md:leading-normal">
+						If you're reading this, we are now friends, and I hope you have a great day!
+					</p>
+				</div>
+			</div>
+		</section>
+	}
+}

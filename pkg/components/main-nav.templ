@@ -1,0 +1,38 @@
+package components
+
+import "github.com/jontitorr/site/pkg/core"
+
+templ MainNav() {
+	<div class="flex gap-6 md:gap-10" x-data="{ open: false }">
+		<a href="/" class="hidden items-center space-x-2 md:flex">
+			<img src="https://avatars.githubusercontent.com/u/59069386?v=4" alt="jontitorr" class="h-16 w-16 object-cover p-1"/>
+			<span class="font-bold inline-block text-white">
+				{ core.Site().Name }
+			</span>
+		</a>
+		if len(core.Site().MainNav) > 0 {
+			<nav class="hidden gap-6 md:flex">
+				for _, link := range core.Site().MainNav {
+					@NavLink(link)
+				}
+			</nav>
+		}
+		<button
+			class="flex items-center space-x-2 md:hidden"
+			x-on:click="open = !open"
+		>
+			<template x-if="open">
+				@Icons().Close()
+			</template>
+			<template x-if="!open">
+				@Icons().Logo()
+			</template>
+			<span class="font-bold text-white" x-text="open ? 'Close' : 'Menu'"></span>
+		</button>
+		<template x-if="open" x-transition>
+			@MobileNav() {
+				{ children... }
+			}
+		</template>
+	</div>
+}
