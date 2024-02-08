@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "tailwindcss build -i static/css/main.css -o static/css/styles.css",
-    "watch": "tailwindcss build -i static/css/main.css -o static/css/styles.css --watch"
+    "build": "tailwindcss build -i public/static/css/main.css -o public/static/css/styles.css",
+    "watch": "tailwindcss build -i public/static/css/main.css -o public/static/css/styles.css --watch"
   },
   "keywords": [],
   "author": "jontitorr",

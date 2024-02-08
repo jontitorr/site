@@ -10,11 +10,8 @@ generate:
 	@templ generate
 	@pnpm build
 
-run: generate
-	@go run main.go
-
 build: generate
-	@go build -o bin/$(EXECUTABLE) main.go
+	@go build -o bin/$(EXECUTABLE) cmd/site/main.go
 
 watch-css:
 	@pnpm watch
@@ -22,5 +19,5 @@ watch-css:
 watch-go:
 	@air -c $(AIR_CONFIG)
 
-dev:
+dev: build
 	@make -j 2 watch-css watch-go

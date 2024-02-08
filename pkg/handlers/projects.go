@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"context"
+	"io"
 	"log/slog"
 	"time"
 
@@ -63,4 +64,14 @@ func (h ProjectsHandler) Show(s *core.Server) (ret func(c echo.Context) error) {
 	}
 
 	return
+}
+
+func (h ProjectsHandler) Save(s *core.Server, w io.Writer) error {
+	vars, err := s.FetchData(context.Background())
+	if err != nil {
+		slog.Error("failed to fetch data", slog.Any("error", err))
+		return err
+	}
+
+	return save(w, routes.Projects(vars.Projects))
 }
